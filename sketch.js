@@ -63,6 +63,7 @@ function pokeBall(_x, _y, _label,_type) {
 	this.speed = 2;
   this.size= 25;
   this.text=14;
+  this.font='Baloo Bhaijaan'
 
 	this.yDir = 1;
 	this.xDir = 1;
@@ -84,12 +85,14 @@ function pokeBall(_x, _y, _label,_type) {
 	this.display = function() {
     image(myImage,this.x, this.y,this.size,this.size);
     fill(this.color);
+    textFont(this.font);
   textSize(this.text);
     text(this.label,this.x,this.y);
 	}
   this.testo = function(){
-    background(200)
-    fill(this.color);
+    background('#034081')
+    fill('#ffc802');
+    textFont(this.font);
     textSize(60);
     text('gotta catch em all ',width/3,height/2);
     textSize(30);
@@ -101,6 +104,7 @@ function pokeBall(_x, _y, _label,_type) {
       if (d < this.size) {
         this.display = function() {
           fill(this.color);
+          textFont(this.font);
           textSize(this.text);
           text(this.type,this.x,this.y);
         }
